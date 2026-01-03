@@ -91,6 +91,12 @@ The project demonstrates:
 **Home Page:**  
 ![Home Page](screenshots/home.png)  
 
+**About Page:**  
+![About Page](screenshots/about.png)  
+
+**Contact Page:**  
+![Contact Page](screenshots/contact.png)  
+
 **Blog List Page:**  
 ![Blog List](screenshots/blog-list.png)  
 
