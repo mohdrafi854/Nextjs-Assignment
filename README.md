@@ -104,10 +104,10 @@ The project demonstrates:
 ![Blog Detail](screenshots/blog-detail.png)  
 
 **Login Page:**  
-![Login Page](screenshots/login.png)  
+![Login Page](screenshots/login.PNG)  
 
 **Admin Dashboard:**  
-![Dashboard](screenshots/dashboard.png)  
+![Dashboard](screenshots/dashboard.PNG)  
 
 > Replace the `screenshots/` images with your actual screenshots or GIFs.
 
