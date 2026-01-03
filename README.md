@@ -84,18 +84,6 @@ The project demonstrates:
 - [x] Login → Logout toggle in Navbar  
 - [x] Error and loading indicators  
 
-### Partially Implemented ⚡
-- [ ] Authentication Protection (middleware-based not fully implemented)  
-- [ ] Admin Dashboard CRUD operations not added  
-- [ ] SEO & Metadata (dynamic API not fully implemented)  
-- [ ] Pagination (basic UI only)  
-
-### Not Implemented ❌
-- [ ] Comments feature (slice & saga not implemented)  
-- [ ] Offline caching & expiry strategy  
-- [ ] Signup flow (DummyJSON signup not implemented)  
-- [ ] Advanced performance optimizations (ISR, Streaming SSR, Reselect selectors)
-
 ---
 
 ## 📸 Screenshots / GIFs
@@ -137,16 +125,4 @@ The project demonstrates:
 - Toast notifications  
 - Better caching and offline support  
 
----
 
-## 🔗 Project Links
-- **Live Demo:** [https://blog-app-rafi.vercel.app/](https://blog-app-rafi.vercel.app/)  
-- **GitHub Repository (Private):** [Repo Link](https://github.com/mohdrafi854/Nextjs-Assignment.git)  
-
----
-
-## 📞 Contact
-**Full Name:** Mohd Rafi  
-**Email:** mohd.rafi854@gmail.com  
-**Phone:** 7835985695  
-**GitHub:** [mohdrafi854](https://github.com/mohdrafi854)
