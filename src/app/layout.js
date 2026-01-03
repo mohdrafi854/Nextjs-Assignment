@@ -16,6 +16,9 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "My Nextjs Blog",
   description: "Blog Website",
+  icons: {
+    icon: "/empty.svg",
+  },
 };
 
 export default function RootLayout({ children }) {

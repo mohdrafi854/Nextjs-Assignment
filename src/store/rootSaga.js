@@ -8,6 +8,7 @@ import {
   fetchPostByIdSuccess,
   fetchPostByIdFailure,
 } from "./slices/postsSlice";
+import authSaga from "./sagas/authSaga";
 
 function* fetchPostsSaga() {
   try {
@@ -21,9 +22,7 @@ function* fetchPostsSaga() {
 function* fetchPostByIdSaga(action) {
   try {
     const res = yield call(() =>
-      axios.get(
-        `https://jsonplaceholder.typicode.com/posts/${action.payload}`
-      )
+      axios.get(`https://jsonplaceholder.typicode.com/posts/${action.payload}`)
     );
     yield put(fetchPostByIdSuccess(res.data));
   } catch (error) {
@@ -31,7 +30,10 @@ function* fetchPostByIdSaga(action) {
   }
 }
 
-
 export default function* rootSaga() {
-  yield all([takeLatest(fetchPostsRequest.type, fetchPostsSaga), takeLatest(fetchPostByIdRequest.type, fetchPostByIdSaga)]);
+  
+    yield all([authSaga(),
+      takeLatest(fetchPostsRequest.type, fetchPostsSaga),
+      takeLatest(fetchPostByIdRequest.type, fetchPostByIdSaga),
+    ]);
 }

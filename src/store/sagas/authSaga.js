@@ -19,7 +19,7 @@ const loginApi = async (credentials) => {
   });
 
   if (!res.ok) {
-    throw new error("Invalid username or password");
+    throw new Error("Invalid username or password");
   }
 
   return res.json();
@@ -33,28 +33,38 @@ const getMeApi = async (token) => {
   });
 
   if (!res.ok) {
-    throw new error("Failed to fetch user");
+    throw new Error("Failed to fetch user");
   }
 
   return res.json();
 };
 
-function* loginSaga() {
+function* loginSaga(action) {
   try {
-    const loginResponse = yield call(loginApi, actionAsyncStorage.payload);
+    const loginResponse = yield call(loginApi, action.payload);
 
-    localStorage.setItem("token", loginResponse.token);
+    const token = loginResponse.accessToken;
 
-    const user = yield call(getMeApi, loginResponse.token);
+     if (!token) {
+      throw new Error("Token not received");
+    }
 
-    yield put(loginSuccess({ token: loginResponse.token, user }));
+    
+      localStorage.setItem("token", token);
+    
+
+    const user = yield call(getMeApi, token);
+
+    yield put(loginSuccess({ token, user }));
   } catch (error) {
     yield put(loginFailure(error.message));
   }
 }
 
 function* logoutSaga() {
-  localStorage.removeItem("token");
+  if (typeof window !== "undefined") {
+    localStorage.removeItem("token");
+  }
 }
 
 export default function* authSaga() {
