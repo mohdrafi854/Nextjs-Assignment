@@ -3,7 +3,6 @@ import { useEffect } from "react";
 import { useParams } from "next/navigation";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchPostByIdRequest } from "@/store/slices/postsSlice";
-import Link from "next/link";
 export default function BlogDetail() {
   const { id } = useParams();
   const dispatch = useDispatch();
@@ -11,7 +10,7 @@ export default function BlogDetail() {
     (state) => state.posts
   );
 
-  console.log(selectedPost);
+  
 
   useEffect(() => {
     dispatch(fetchPostByIdRequest(id));

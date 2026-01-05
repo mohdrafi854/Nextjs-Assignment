@@ -10,7 +10,9 @@ export default function BlogList() {
     dispatch(fetchPostsRequest());
   }, [dispatch]);
 
-  console.log(posts.posts);
+
+
+
 
   return (
     <div className="container mx-auto px-4 py-10">
@@ -50,7 +52,7 @@ export default function BlogList() {
                 </span>
               )}
             </div>
-            <Link className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors" href={`/`}>Read More</Link>
+            <Link className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors" href={`/blog-detail/${post.id}`}>Read More</Link>
           </div>
         ))}
       </div>
