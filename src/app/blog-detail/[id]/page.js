@@ -9,7 +9,7 @@ export default function BlogDetail() {
   const { selectedPost, isLoading, error } = useSelector(
     (state) => state.posts
   );
-
+  
   
 
   useEffect(() => {

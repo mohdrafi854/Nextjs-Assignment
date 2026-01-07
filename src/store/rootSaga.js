@@ -22,7 +22,7 @@ function* fetchPostsSaga() {
 function* fetchPostByIdSaga(action) {
   try {
     const res = yield call(() =>
-      axios.get(`https://jsonplaceholder.typicode.com/posts/${action.payload}`)
+      axios.get(`https://dummyjson.com/posts/${action.payload}`)
     );
     yield put(fetchPostByIdSuccess(res.data));
   } catch (error) {
